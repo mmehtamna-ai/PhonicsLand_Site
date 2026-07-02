@@ -1,0 +1,9 @@
+{
+  "name": "phonics-land-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Phonics Land website, with a Recent Updates section controlled from Telegram.",
+  "dependencies": {
+    "@vercel/kv": "^2.0.0"
+  }
+}
