@@ -6,21 +6,22 @@
 <title>Phonics Land — English Phonics for Kids, Ahmedabad</title>
 <style>
   :root {
-    --bg: #fdf6ec;
-    --surface: #ffffff;
-    --surface-2: #fbf1f8;
-    --border: #ecdfd0;
-    --text: #3a3229;
-    --text-dim: #8a8073;
-    --ink: #3a3229;
-    --pastel-yellow: #ffe29a;
-    --pastel-coral: #ffb4a2;
-    --pastel-blue: #a8dadc;
-    --pastel-lavender: #cdb4db;
-    --ink-yellow: #c9962e;
-    --ink-coral: #e2664c;
-    --ink-blue: #3f8fa3;
-    --ink-lavender: #8c67ac;
+    --bg: #1b1a2e;
+    --surface: #262445;
+    --surface-2: #2c2a52;
+    --border: #3a3768;
+    --text: #f5f3ff;
+    --text-dim: #a9a6d0;
+    --ink: #f5f3ff;
+    --on-bright: #1b1a2e;
+    --pastel-yellow: #ffd23f;
+    --pastel-coral: #ff6b6b;
+    --pastel-blue: #4ecdc4;
+    --pastel-lavender: #c77dff;
+    --ink-yellow: #ffd23f;
+    --ink-coral: #ff6b6b;
+    --ink-blue: #4ecdc4;
+    --ink-lavender: #c77dff;
     --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --rounded: ui-rounded, "SF Pro Rounded", "Segoe UI", var(--sans);
     --mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
@@ -38,10 +39,12 @@
   body {
     background-color: var(--bg);
     background-image:
-      radial-gradient(circle at 8% 10%, rgba(255, 180, 162, 0.35), transparent 38%),
-      radial-gradient(circle at 92% 12%, rgba(168, 218, 220, 0.35), transparent 42%),
-      radial-gradient(circle at 12% 92%, rgba(205, 180, 219, 0.32), transparent 42%),
-      radial-gradient(circle at 90% 88%, rgba(255, 226, 154, 0.35), transparent 40%);
+      radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.18) 1px, transparent 0),
+      radial-gradient(circle at 8% 10%, rgba(255, 107, 107, 0.20), transparent 38%),
+      radial-gradient(circle at 92% 14%, rgba(78, 205, 196, 0.20), transparent 42%),
+      radial-gradient(circle at 14% 90%, rgba(199, 125, 255, 0.18), transparent 42%),
+      radial-gradient(circle at 88% 86%, rgba(255, 210, 63, 0.18), transparent 40%);
+    background-size: 28px 28px, auto, auto, auto, auto;
     background-attachment: fixed;
   }
 
@@ -86,7 +89,7 @@
     width: 40px; height: 40px;
     display: flex; align-items: center; justify-content: center;
     font-family: var(--rounded); font-weight: 800; font-size: 1.1rem;
-    border-radius: 9px; color: var(--ink);
+    border-radius: 9px; color: var(--on-bright);
     transform: rotate(var(--r, 0deg));
   }
   .block.y { background: var(--pastel-yellow); --r: -4deg; }
@@ -118,7 +121,7 @@
   .about-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    box-shadow: 0 6px 20px rgba(120, 90, 60, 0.06);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     border-radius: 16px;
     padding: 28px 30px;
     display: flex;
@@ -133,7 +136,7 @@
     background: linear-gradient(135deg, var(--pastel-coral), var(--pastel-yellow));
     display: flex; align-items: center; justify-content: center;
     font-family: var(--rounded); font-weight: 800; font-size: 1.3rem;
-    color: var(--ink);
+    color: var(--on-bright);
   }
 
   .about-card p { margin: 0 0 10px; line-height: 1.65; color: var(--text-dim); }
@@ -146,10 +149,10 @@
     padding: 5px 12px; border-radius: 100px; border: 1px solid transparent;
     color: var(--text);
   }
-  .tag:nth-child(4n+1) { background: rgba(255, 180, 162, 0.32); }
-  .tag:nth-child(4n+2) { background: rgba(168, 218, 220, 0.35); }
-  .tag:nth-child(4n+3) { background: rgba(255, 226, 154, 0.4); }
-  .tag:nth-child(4n+4) { background: rgba(205, 180, 219, 0.32); }
+  .tag:nth-child(4n+1) { background: rgba(255, 107, 107, 0.32); }
+  .tag:nth-child(4n+2) { background: rgba(78, 205, 196, 0.35); }
+  .tag:nth-child(4n+3) { background: rgba(255, 210, 63, 0.4); }
+  .tag:nth-child(4n+4) { background: rgba(199, 125, 255, 0.32); }
 
   /* Programs */
   .programs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -157,7 +160,7 @@
   .program {
     background: var(--surface);
     border: 1px solid var(--border);
-    box-shadow: 0 6px 18px rgba(120, 90, 60, 0.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     border-radius: 14px;
     padding: 22px;
   }
@@ -170,7 +173,7 @@
     position: relative;
     background: var(--surface);
     border: 1px solid var(--border);
-    box-shadow: 0 6px 20px rgba(120, 90, 60, 0.06);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     border-radius: 16px;
     padding: 28px 30px;
     overflow: hidden;
@@ -199,17 +202,17 @@
     gap: 8px;
     color: var(--text-dim);
   }
-  .placeholder-card:nth-child(4n+1) { background: rgba(255, 226, 154, 0.25); }
-  .placeholder-card:nth-child(4n+2) { background: rgba(255, 180, 162, 0.22); }
-  .placeholder-card:nth-child(4n+3) { background: rgba(168, 218, 220, 0.24); }
-  .placeholder-card:nth-child(4n+4) { background: rgba(205, 180, 219, 0.22); }
+  .placeholder-card:nth-child(4n+1) { background: rgba(255, 210, 63, 0.25); }
+  .placeholder-card:nth-child(4n+2) { background: rgba(255, 107, 107, 0.22); }
+  .placeholder-card:nth-child(4n+3) { background: rgba(78, 205, 196, 0.24); }
+  .placeholder-card:nth-child(4n+4) { background: rgba(199, 125, 255, 0.22); }
 
   .photo-tile {
     aspect-ratio: 1;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--border);
-    box-shadow: 0 6px 16px rgba(120, 90, 60, 0.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   }
   .photo-tile img {
     width: 100%; height: 100%;
@@ -227,7 +230,7 @@
   .book-group {
     background: var(--surface);
     border: 1px solid var(--border);
-    box-shadow: 0 6px 18px rgba(120, 90, 60, 0.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     border-radius: 14px;
     padding: 20px 24px;
   }
@@ -246,10 +249,10 @@
     border-radius: 14px;
     padding: 20px;
   }
-  .star-card:nth-child(4n+1) { background: rgba(255, 226, 154, 0.28); }
-  .star-card:nth-child(4n+2) { background: rgba(255, 180, 162, 0.24); }
-  .star-card:nth-child(4n+3) { background: rgba(168, 218, 220, 0.26); }
-  .star-card:nth-child(4n+4) { background: rgba(205, 180, 219, 0.24); }
+  .star-card:nth-child(4n+1) { background: rgba(255, 210, 63, 0.28); }
+  .star-card:nth-child(4n+2) { background: rgba(255, 107, 107, 0.24); }
+  .star-card:nth-child(4n+3) { background: rgba(78, 205, 196, 0.26); }
+  .star-card:nth-child(4n+4) { background: rgba(199, 125, 255, 0.24); }
   .star-card h3 {
     font-family: var(--rounded); font-size: 0.95rem; margin: 0 0 6px; color: var(--ink-yellow);
   }
@@ -261,7 +264,7 @@
     display: inline-flex; align-items: center; gap: 10px;
     background: var(--surface);
     border: 1px solid var(--border);
-    box-shadow: 0 6px 16px rgba(120, 90, 60, 0.06);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
     border-radius: 100px;
     padding: 12px 20px;
     color: var(--text);
@@ -300,6 +303,31 @@
   @media (max-width: 700px) {
     .doodle { display: none; }
   }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* Scroll progress bar */
+  #scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--pastel-coral), var(--pastel-yellow), var(--pastel-blue), var(--pastel-lavender));
+    z-index: 100;
+    transition: width 0.1s ease-out;
+  }
 </style>
 </head>
 <body>
@@ -330,7 +358,7 @@
   </div>
 
   <!-- Meet Ruchi -->
-  <section>
+  <section class="reveal">
     <h2>Meet Ruchi</h2>
     <div class="about-card">
       <div class="avatar">R</div>
@@ -357,7 +385,7 @@
   </section>
 
   <!-- Programs -->
-  <section class="doodle-zone">
+  <section class="doodle-zone reveal">
     <svg class="doodle" style="top:-6px; right:0; width:32px; height:26px; opacity:0.55;" viewBox="0 0 32 26" fill="none">
       <path d="M2 3c4-2 9-2 13 1v18c-4-3-9-3-13-1Z" stroke="var(--ink-blue)" stroke-width="1.7" stroke-linejoin="round"/>
       <path d="M30 3c-4-2-9-2-13 1v18c4-3 9-3 13-1Z" stroke="var(--ink-blue)" stroke-width="1.7" stroke-linejoin="round"/>
@@ -420,7 +448,7 @@
   </section>
 
   <!-- How Was Our Month -->
-  <section style="--accent-bar: var(--ink-coral)">
+  <section class="reveal" style="--accent-bar: var(--ink-coral)">
     <h2>How Was Our Month?</h2>
     <div class="feature-card">
       <div class="feature-tag">✦ Monthly recap</div>
@@ -433,7 +461,7 @@ for this month's recap!</p>
   </section>
 
   <!-- Today's Quote -->
-  <section style="--accent-bar: var(--ink-yellow)">
+  <section class="reveal" style="--accent-bar: var(--ink-yellow)">
     <h2>Today's Quote</h2>
     <p class="section-note">A motivational quote found and shared by one of our own students, every day.</p>
     <div class="feature-card">
@@ -445,7 +473,7 @@ for this month's recap!</p>
   </section>
 
   <!-- Gallery -->
-  <section>
+  <section class="reveal">
     <h2>Gallery</h2>
     <p class="section-note">Snapshots from Phonics Land classes and outings.</p>
     <div class="placeholder-grid">
@@ -471,7 +499,7 @@ for this month's recap!</p>
   </section>
 
   <!-- Creative Corner -->
-  <section>
+  <section class="reveal">
     <h2>Creative Corner</h2>
     <p class="section-note">Drawings, bookmarks, and little creations our students send in — this is their corner.</p>
     <div class="placeholder-grid">
@@ -488,7 +516,7 @@ for this month's recap!</p>
   </section>
 
   <!-- Books Recommended -->
-  <section class="doodle-zone">
+  <section class="doodle-zone reveal">
     <svg class="doodle" style="top:-4px; right:2%; width:26px; height:28px; opacity:0.55;" viewBox="0 0 26 28" fill="none">
       <path d="M13 8c-4-3-9-1-9 5 0 6 5 12 9 12s9-6 9-12c0-6-5-8-9-5Z" stroke="var(--ink-coral)" stroke-width="1.7" stroke-linejoin="round"/>
       <path d="M13 8 C12 5 13 3 16 2" stroke="var(--ink-yellow)" stroke-width="1.7" stroke-linecap="round"/>
@@ -524,7 +552,7 @@ for this month's recap!</p>
   </section>
 
   <!-- Stars of the Month -->
-  <section>
+  <section class="reveal">
     <h2>Stars of the Month</h2>
     <p class="section-note">Small steps towards a brighter future — celebrating our students every month.</p>
     <div class="stars-grid">
@@ -536,7 +564,7 @@ for this month's recap!</p>
   </section>
 
   <!-- Get in Touch -->
-  <section>
+  <section class="reveal">
     <h2>Get in Touch</h2>
     <p class="section-note">Reach out anytime — happy to answer questions about classes and schedules.</p>
     <div class="contact-row">
@@ -568,5 +596,38 @@ for this month's recap!</p>
 
 
 </div>
+
+<div id="scroll-progress"></div>
+
+<script>
+  // Scroll progress bar
+  const progressBar = document.getElementById('scroll-progress');
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  // Scroll reveal — fade + slide up each section as it enters the viewport
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach((el) => observer.observe(el));
+  } else {
+    // Fallback: just show everything if IntersectionObserver isn't supported
+    revealEls.forEach((el) => el.classList.add('is-visible'));
+  }
+</script>
 </body>
 </html>
