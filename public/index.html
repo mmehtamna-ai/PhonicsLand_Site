@@ -213,6 +213,7 @@
     overflow: hidden;
     border: 1px solid var(--border);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
   }
   .photo-tile img {
     width: 100%; height: 100%;
@@ -258,6 +259,71 @@
   }
   .star-card p { font-family: var(--mono); font-size: 12px; color: var(--text-dim); margin: 0; }
 
+  /* What to Expect */
+  .step-list { display: flex; flex-direction: column; gap: 14px; }
+  .step-card {
+    display: flex; gap: 16px; align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 14px;
+    padding: 18px 22px;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--pastel-blue);
+    color: var(--on-bright);
+    font-family: var(--rounded); font-weight: 800; font-size: 0.9rem;
+  }
+  .step-card h3 { font-family: var(--rounded); font-size: 1rem; margin: 0 0 6px; }
+  .step-card p { font-size: 0.92rem; line-height: 1.55; color: var(--text-dim); margin: 0; }
+
+  /* What Parents Are Saying */
+  .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .testimonial-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .quote-mark {
+    font-family: var(--rounded); font-size: 2rem; line-height: 1;
+    color: var(--pastel-lavender); margin-bottom: 6px;
+  }
+  .testimonial-text { font-size: 0.92rem; line-height: 1.55; color: var(--text-dim); margin: 0 0 14px; font-style: italic; }
+  .testimonial-attr { font-family: var(--mono); font-size: 11px; color: var(--text-dim); opacity: 0.75; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    font-family: var(--rounded);
+    font-weight: 700;
+    font-size: 0.98rem;
+    list-style: none;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--ink-blue);
+    margin-left: 12px;
+    transition: transform 0.2s ease;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p { font-size: 0.92rem; line-height: 1.6; color: var(--text-dim); margin: 12px 0 0; }
+
   /* Get in Touch */
   .contact-row { display: flex; flex-wrap: wrap; gap: 12px; }
   .contact-btn {
@@ -270,9 +336,51 @@
     color: var(--text);
     text-decoration: none;
     font-size: 0.92rem;
-    transition: transform 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   }
-  .contact-btn:hover { transform: translateY(-1px); }
+  .contact-btn:hover {
+    transform: translateY(-1px);
+    border-color: var(--pastel-blue);
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.25);
+  }
+
+  @media (max-width: 560px) {
+    .testimonial-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Lightbox */
+  #lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 9, 20, 0.92);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    cursor: zoom-out;
+  }
+  #lightbox-overlay.active { display: flex; }
+  #lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  #lightbox-close {
+    position: fixed;
+    top: 20px; right: 24px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 1.3rem;
+    line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+  }
 
   /* Footer */
   footer {
@@ -338,17 +446,12 @@
     <path d="M17 2 L20.5 12.5 L31.5 12.5 L22.5 19 L26 29.5 L17 23 L8 29.5 L11.5 19 L2.5 12.5 L13.5 12.5 Z"
       stroke="var(--ink-yellow)" stroke-width="1.8" stroke-linejoin="round"/>
   </svg>
-  <svg class="doodle" style="top:150px; left:2%; width:30px; height:30px; opacity:0.5;" viewBox="0 0 30 30" fill="none">
-    <path d="M4 26 L6 19 L20 5 C21 4 23 4 24 5 L25 6 C26 7 26 9 25 10 L11 24 Z" stroke="var(--ink-coral)" stroke-width="1.8" stroke-linejoin="round"/>
-    <path d="M6 19 L11 24" stroke="var(--ink-coral)" stroke-width="1.8"/>
-    <path d="M18 7 L23 12" stroke="var(--ink-coral)" stroke-width="1.8"/>
-  </svg>
 
   <div class="eyebrow">Phonics Land · Sola Road, Ahmedabad</div>
   <h1>Where reading clicks.</h1>
   <p class="tagline">
-    A place where your child learns English in a play mode — a holistic approach to
-    building real phonics, reading, and writing skills, one sound at a time.
+    A play-based approach to English phonics, reading, and writing — built around
+    how your child actually learns, one sound at a time.
   </p>
   <div class="blocks">
     <div class="block y">P</div><div class="block c">H</div><div class="block b">O</div>
@@ -444,6 +547,65 @@
         <p>Grammar workshops conducted for mothers, covering key concepts to reinforce learning at home.</p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- What to Expect -->
+  <section class="reveal">
+    <h2>What to Expect</h2>
+    <p class="section-note">A look at what a typical session actually involves.</p>
+    <div class="step-list">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Warm-up &amp; sound review</h3>
+          <p>A few minutes revisiting sounds and words from the last session, so nothing's forgotten between classes.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Guided reading &amp; writing</h3>
+          <p>Focused, one-on-one or small-group practice at the child's actual level — not a fixed script everyone follows the same way.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div>
+          <h3>An activity or game</h3>
+          <p>Play is how the ideas actually stick — a short game, story, or activity built around whatever was just practiced.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div>
+          <h3>Wrap-up &amp; take-home practice</h3>
+          <p>A quick recap, and something small to reinforce at home before the next session.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Parents Are Saying -->
+  <section class="reveal">
+    <h2>What Parents Are Saying</h2>
+    <p class="section-note">Real feedback from Phonics Land families — added as it comes in.</p>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="quote-mark">“</div>
+        <p class="testimonial-text">Testimonial coming soon.</p>
+        <div class="testimonial-attr">— Parent name coming soon</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">“</div>
+        <p class="testimonial-text">Testimonial coming soon.</p>
+        <div class="testimonial-attr">— Parent name coming soon</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">“</div>
+        <p class="testimonial-text">Testimonial coming soon.</p>
+        <div class="testimonial-attr">— Parent name coming soon</div>
+      </div>
     </div>
   </section>
 
@@ -563,6 +725,34 @@ for this month's recap!</p>
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="reveal">
+    <h2>Common Questions</h2>
+    <p class="section-note">What most parents ask before getting started.</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What age should my child start?</summary>
+        <p>Phonics Land takes children from age 3 through 13. Younger children usually start with sound and letter foundations; older children join for reading, writing, grammar, or ongoing English support alongside school.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are classes online, in person, or both?</summary>
+        <p>Both. Ruchi teaches in person at Sola Road, Ahmedabad, and online for families further away — including students outside India.</p>
+      </details>
+      <details class="faq-item">
+        <summary>One-on-one or group classes?</summary>
+        <p>Both formats are available. Many families start one-on-one and move into a small group once a child is comfortable — whatever fits your child best.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much does it cost, and what are the timings?</summary>
+        <p>This varies by program and format. Message on WhatsApp or email below and Ruchi will share current fees and available time slots.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will I know how my child is progressing?</summary>
+        <p>Yes — Ruchi checks in directly with parents rather than leaving updates to a single term-end report, so you're not left guessing between sessions.</p>
+      </details>
+    </div>
+  </section>
+
   <!-- Get in Touch -->
   <section class="reveal">
     <h2>Get in Touch</h2>
@@ -599,6 +789,11 @@ for this month's recap!</p>
 
 <div id="scroll-progress"></div>
 
+<div id="lightbox-overlay">
+  <button id="lightbox-close" aria-label="Close">✕</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
 <script>
   // Scroll progress bar
   const progressBar = document.getElementById('scroll-progress');
@@ -628,6 +823,38 @@ for this month's recap!</p>
     // Fallback: just show everything if IntersectionObserver isn't supported
     revealEls.forEach((el) => el.classList.add('is-visible'));
   }
+
+  // Lightbox — click any gallery/creative-corner photo to expand it
+  const lightboxOverlay = document.getElementById('lightbox-overlay');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightboxOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightboxOverlay.classList.remove('active');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.photo-tile img').forEach((img) => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+
+  lightboxOverlay.addEventListener('click', (e) => {
+    if (e.target === lightboxOverlay) closeLightbox();
+  });
+  document.getElementById('lightbox-close').addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
 </script>
 </body>
 </html>
