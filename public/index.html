@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ruchi's Phonics Land — Online English Phonics for Kids</title>
-<meta name="description" content="Ruchi's Phonics Land is a play-based, online English phonics, reading, and writing program for children ages 3–13, taught by Ruchi to families in India, the US, Mexico and Australia." />
+<meta name="description" content="Ruchi's Phonics Land is a play-based, online English phonics, reading, and writing program for children ages 4–13, taught by Ruchi to families in India, the US and Mexico." />
 
 <meta property="og:title" content="Ruchi's Phonics Land — Online English Phonics for Kids" />
-<meta property="og:description" content="Play-based English phonics, reading, and writing for children ages 3–13, taught online by Ruchi." />
+<meta property="og:description" content="Play-based English phonics, reading, and writing for children ages 4–13, taught online by Ruchi." />
 <meta property="og:type" content="website" />
 
 <script type="application/ld+json">
@@ -15,7 +15,7 @@
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "Ruchi's Phonics Land",
-  "description": "Play-based English phonics, reading, and writing program for children ages 3–13, taught online.",
+  "description": "Play-based English phonics, reading, and writing program for children ages 4–13, taught online.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Ahmedabad",
@@ -98,12 +98,29 @@
     letter-spacing: -0.01em;
   }
 
-  .hero-flourish {
-    display: block;
-    width: 200px;
-    height: 16px;
-    margin: 0 0 18px;
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
+
+  .blocks { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 18px; }
+  .block {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--rounded); font-weight: 800; font-size: 1.1rem;
+    border-radius: 9px; color: var(--on-bright);
+    transform: rotate(var(--r, 0deg));
+  }
+  .block.y { background: var(--pastel-yellow); --r: -4deg; }
+  .block.c { background: var(--pastel-coral); --r: 3deg; }
+  .block.b { background: var(--pastel-blue); --r: -2deg; }
+  .block.l { background: var(--pastel-lavender); --r: 3deg; }
+  .block-gap { width: 14px; flex-shrink: 0; }
 
   .hero-subhead {
     font-family: var(--rounded);
@@ -737,7 +754,7 @@
   <a href="#" class="nav-brand">Ruchi's Phonics Land</a>
   <div id="nav-links" class="nav-links">
     <a href="#about">Meet Ruchi</a>
-    <a href="#programs">Programs</a>
+    <a href="#programs"><span data-gb="Programmes" data-us="Programs">Programmes</span></a>
     <a href="#get-started">How to Get Started</a>
     <a href="#parents">What Parents are Saying</a>
     <a href="#doing">What We Are Doing</a>
@@ -762,12 +779,15 @@
       stroke="var(--ink-yellow)" stroke-width="1.8" stroke-linejoin="round"/>
   </svg>
 
-  <h1>Ruchi's Phonics Land</h1>
-  <svg class="hero-flourish" viewBox="0 0 260 20" preserveAspectRatio="xMinYMid meet">
-    <path d="M4 12 Q60 2 116 12 T228 12 T256 12" fill="none" stroke="var(--pastel-yellow)" stroke-width="3" stroke-linecap="round"/>
-  </svg>
-  <div class="hero-geo">India · US · Mexico · Australia</div>
-  <p class="hero-subhead">Confident speakers. Better writers. Lifelong readers.</p>
+  <h1>Ruchi's <span class="sr-only">Phonics Land</span></h1>
+  <div class="blocks" aria-hidden="true">
+    <div class="block y">P</div><div class="block c">H</div><div class="block b">O</div>
+    <div class="block l">N</div><div class="block c">I</div><div class="block b">C</div><div class="block y">S</div>
+    <div class="block-gap"></div>
+    <div class="block c">L</div><div class="block b">A</div><div class="block l">N</div><div class="block y">D</div>
+  </div>
+  <div class="hero-geo">India · US · Mexico</div>
+  <p class="hero-subhead">Lifelong readers. Confident speakers. Better writers.</p>
   <p class="tagline">
     A play-based approach to spoken English, phonics, reading, and writing — built around
     how your child actually learns, in a play way mode.
@@ -809,7 +829,7 @@
           <span class="tag">English</span>
           <span class="tag">Hindi</span>
           <span class="tag">Gujarati</span>
-          <span class="tag">Ages 3–13</span>
+          <span class="tag">Ages 4–13</span>
         </div>
       </div>
     </div>
@@ -823,7 +843,7 @@
     </svg>
     <h2><span data-gb="Programmes" data-us="Programs">Programmes</span></h2>
     <p class="section-note">
-      For ages 3 to 13, taught online one-on-one or in small groups of 5–8 by age — with recitation, storytelling,
+      For ages 4 to 13, taught online one-on-one or in small groups of 5–8 by age — with recitation, storytelling,
       debates, and presentations woven in along the way to build confidence as much as vocabulary.
     </p>
     <div class="programs">
@@ -1130,8 +1150,7 @@ for this month's recap!</p>
         <option value="Asia/Kolkata" data-zone-label="India Standard Time">India</option>
         <option value="America/New_York" data-zone-label="US Eastern Time">United States (Eastern)</option>
         <option value="America/Mexico_City" data-zone-label="Central Time">Mexico</option>
-        <option value="Australia/Sydney" data-zone-label="Australian Eastern Time">Australia (Sydney)</option>
-      </select>
+              </select>
       <div class="timings-windows">
         <div class="timing-window">
           <div class="timing-window-label">☀️ Morning batch</div>
@@ -1153,7 +1172,7 @@ for this month's recap!</p>
     <div class="faq-list">
       <details class="faq-item">
         <summary>What age should my child start?</summary>
-        <p>Ruchi's Phonics Land takes children from age 3 through 13. Younger children usually start with sound and letter foundations; older children join for reading, writing, grammar, or ongoing English support alongside school.</p>
+        <p>Ruchi's Phonics Land takes children from age 4 through 13. Younger children usually start with sound and letter foundations; older children join for reading, writing, grammar, or ongoing English support alongside school.</p>
       </details>
       <details class="faq-item">
         <summary>Are classes online or in person?</summary>
@@ -1216,7 +1235,7 @@ for this month's recap!</p>
       <path d="M1 11 L24 1 L15 20 L11 13 Z" stroke="var(--ink-lavender)" stroke-width="1.7" stroke-linejoin="round"/>
       <path d="M24 1 L11 13" stroke="var(--ink-lavender)" stroke-width="1.7"/>
     </svg>
-    <span>Ruchi's Phonics Land · India, US, Mexico and Australia</span>
+    <span>Ruchi's Phonics Land · India, US and Mexico</span>
     <a href="https://www.facebook.com/ruchiphonicsland/" target="_blank" rel="noopener">facebook.com/ruchiphonicsland</a>
   </footer>
 
